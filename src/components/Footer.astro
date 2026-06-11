@@ -1,0 +1,33 @@
+---
+import { footerNav, site } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-line">
+  <div
+    class="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between"
+  >
+    <p class="font-mono text-[13px]">
+      © {year} {site.name} · no cookies, no trackers
+    </p>
+    <nav aria-label="Footer">
+      <ul class="flex flex-wrap gap-x-5 gap-y-2">
+        {
+          footerNav.map((item) => (
+            <li>
+              <a href={item.href} class="transition-colors hover:text-accent">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a href={`mailto:${site.email}`} class="transition-colors hover:text-accent">
+            {site.email}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>

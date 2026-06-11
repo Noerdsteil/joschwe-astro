@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const topics = [
+  {
+    title: 'For engineers',
+    text: 'Growing from senior engineer toward lead or CTO, navigating startup careers, or just a second pair of eyes on a hard technical decision.',
+  },
+  {
+    title: 'For founders',
+    text: 'First-time founders building their first tech team, choosing their first stack, or preparing for their first technical due diligence.',
+  },
+  {
+    title: 'For the curious',
+    text: 'Thinking about co-founding something? Wondering what the CTO path actually looks like? Ask someone who has walked it.',
+  },
+];
+---
+
+<Base
+  title="Mentoring"
+  description="Free mentoring for engineers and founders — career growth, leadership, first tech teams and hard decisions."
+>
+  <PageHero
+    eyebrow="~/mentoring"
+    title="Mentoring is free. Always has been."
+    lede="People took time for me when I was starting out — this is me paying it forward. No pitch, no upsell, no strings attached."
+  />
+
+  <Section eyebrow="01 / topics" title="What we can talk about">
+    <div class="grid gap-5 lg:grid-cols-3">
+      {
+        topics.map((t) => (
+          <div class="rounded-lg border border-line bg-surface/60 p-6" data-reveal>
+            <h3 class="font-display text-lg font-semibold">{t.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{t.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section eyebrow="02 / format" title="How it works">
+    <div class="max-w-2xl space-y-4 text-muted" data-reveal>
+      <p>
+        Simple: you write me a few lines about where you are and what you’re wrestling with. We
+        schedule a call. If it helps, we do it again. That’s the whole process.
+      </p>
+      <p>
+        The only thing I ask for is honesty about what you want to get out of it — that’s what
+        makes the time count for both of us.
+      </p>
+    </div>
+  </Section>
+
+  <CtaBand title="Want a mentor?" text="Write me a few lines about yourself — that’s all it takes." />
+</Base>

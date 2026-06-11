@@ -1,0 +1,115 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+
+const stack = [
+  {
+    name: 'Astro',
+    href: 'https://astro.build',
+    text: 'Static site generator — every page ships as plain HTML, JavaScript only loads for the few interactive islands.',
+  },
+  {
+    name: 'Vue 3',
+    href: 'https://vuejs.org',
+    text: 'Powers the interactive islands: the theme toggle and the mobile menu. Nothing more — that’s the point.',
+  },
+  {
+    name: 'Tailwind CSS 4',
+    href: 'https://tailwindcss.com',
+    text: 'CSS-first configuration with design tokens as CSS variables, which is what makes the light/dark theme a few lines of code.',
+  },
+  {
+    name: 'Fontsource',
+    href: 'https://fontsource.org',
+    text: 'Self-hosted fonts (Inter, Space Grotesk, JetBrains Mono) — no requests to Google, no tracking.',
+  },
+  {
+    name: 'Cloudflare Pages',
+    href: 'https://pages.cloudflare.com',
+    text: 'Hosting. Every push to the GitHub repository builds and deploys automatically.',
+  },
+  {
+    name: 'Claude Code',
+    href: 'https://claude.com/claude-code',
+    text: 'This site was built AI-first with Claude Code — researched, designed and implemented in a single working session, then refined by hand.',
+  },
+];
+
+const inspirations = [
+  { name: 'lukashermann.dev', href: 'https://lukashermann.dev' },
+  { name: 'benjamincowen.com', href: 'https://benjamincowen.com' },
+  { name: 'arlenmccluskey.com', href: 'https://www.arlenmccluskey.com' },
+  { name: 'robinwieruch.de', href: 'https://www.robinwieruch.de' },
+  { name: 'kantwon.com', href: 'https://www.kantwon.com' },
+  { name: 'devonstank.com', href: 'https://devonstank.com' },
+  { name: 'Stellar by Cruip', href: 'https://cruip.com/demos/stellar/' },
+];
+---
+
+<Base
+  title="How I built this site"
+  description="The tech stack and approach behind this site: Astro, Vue, Tailwind CSS, self-hosted fonts, Cloudflare Pages — built AI-first, no trackers."
+>
+  <PageHero
+    eyebrow="~/colophon"
+    title="How I built this site"
+    lede="Practicing what I preach: an AI-first build, a minimal codebase, no cookies, no trackers — and a design system that’s easy to evolve."
+  />
+
+  <Section eyebrow="01 / approach" title="The approach">
+    <div class="max-w-2xl space-y-4 text-muted" data-reveal>
+      <p>
+        I started the way I’d start any product: with research. I collected personal sites I
+        admired, broke down what made each of them work, and turned that into a design direction —
+        a mono font for the nerdy bits, a display font for the headlines, one bold accent color,
+        and animations in homeopathic doses.
+      </p>
+      <p>
+        Then I built it AI-first with Claude Code: from the research through scaffolding,
+        components and copy, reviewing and steering along the way. The whole site is a handful of
+        data files, a dozen small components and zero dependencies beyond the framework — built as
+        a one-time shot that’s cheap to maintain.
+      </p>
+      <p>
+        Everything is static HTML. The only JavaScript shipped to your browser is the theme toggle,
+        the mobile menu and a tiny scroll-reveal observer. There are no cookies, no analytics and
+        no third-party requests at all.
+      </p>
+    </div>
+  </Section>
+
+  <Section eyebrow="02 / stack" title="The stack">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        stack.map((item) => (
+          <a
+            href={item.href}
+            class="group rounded-lg border border-line bg-surface/60 p-6 transition-all hover:-translate-y-0.5 hover:border-accent"
+            data-reveal
+          >
+            <h3 class="font-mono text-base font-medium group-hover:text-accent">{item.name} ↗</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{item.text}</p>
+          </a>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section eyebrow="03 / credit" title="Sites that inspired this one">
+    <ul class="flex max-w-2xl flex-wrap gap-3" data-reveal>
+      {
+        inspirations.map((i) => (
+          <li>
+            <a
+              href={i.href}
+              class="inline-block rounded-md border border-line px-4 py-2 font-mono text-[13px] text-muted transition-colors hover:border-accent hover:text-accent"
+            >
+              {i.name} ↗
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
+</Base>

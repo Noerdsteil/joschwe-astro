@@ -1,0 +1,132 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Quote from '../components/Quote.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { quotes } from '../data/quotes';
+
+const engineeringQuote = quotes.find((q) => q.context === 'engineering');
+
+const stack = [
+  { label: 'Backend', items: ['Node.js', 'Python'] },
+  { label: 'Frontend', items: ['Vue.js', 'Tailwind CSS'] },
+  { label: 'Data', items: ['MySQL', 'PostgreSQL'] },
+  { label: 'Infrastructure', items: ['From bare metal to cloud-native'] },
+];
+
+const principles = [
+  {
+    title: 'AI-first approach',
+    text: 'AI is part of my engineering workflow from architecture to review — used deliberately, with the experience to know when not to trust it.',
+  },
+  {
+    title: 'Product-oriented mindset',
+    text: 'I ask the right questions upfront. Code only matters if it moves the product and the business.',
+  },
+  {
+    title: 'Continuous improvement',
+    text: 'I improve legacy code while shipping new features — leaving every codebase better than I found it.',
+  },
+];
+
+const examples = [
+  {
+    name: 'laserhub.com',
+    href: 'https://laserhub.com',
+    text: 'The procurement platform for custom metal parts I co-founded and built up as CTO.',
+  },
+  {
+    name: 'ambrosius.ai',
+    href: 'https://ambrosius.ai',
+    text: 'An AI-driven product I contributed to as a software engineer.',
+  },
+];
+---
+
+<Base
+  title="Software Engineering"
+  description="Senior software engineering with a pure startup mindset: web apps, pragmatic automations and an AI-first approach."
+>
+  <PageHero
+    eyebrow="~/engineering"
+    title="Senior software engineering with a pure startup mindset"
+    lede="Focused on web apps, pragmatic automations beyond n8n, and rapid prototyping — with an AI-first approach and twenty years of practice."
+  />
+
+  <Section eyebrow="01 / stack" title="Tech stack">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        stack.map((group) => (
+          <div class="rounded-lg border border-line bg-surface/60 p-6" data-reveal>
+            <p class="font-mono text-[13px] text-accent">{group.label}</p>
+            <ul class="mt-3 space-y-1 text-sm text-muted">
+              {group.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section eyebrow="02 / how i work" title="Principles over buzzwords">
+    <div class="grid gap-5 lg:grid-cols-3">
+      {
+        principles.map((p) => (
+          <div class="rounded-lg border border-line bg-surface/60 p-6" data-reveal>
+            <h3 class="font-display text-lg font-semibold">{p.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{p.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section eyebrow="03 / proof" title="Things I’ve built">
+    <div class="grid gap-5 sm:grid-cols-2">
+      {
+        examples.map((e) => (
+          <a
+            href={e.href}
+            class="group rounded-lg border border-line bg-surface/60 p-6 transition-all hover:-translate-y-0.5 hover:border-accent"
+            data-reveal
+          >
+            <h3 class="font-mono text-lg font-medium group-hover:text-accent">{e.name} ↗</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{e.text}</p>
+          </a>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section eyebrow="04 / scaling up" title="Larger software projects">
+    <div class="max-w-2xl space-y-4 text-muted" data-reveal>
+      <p>
+        When a project outgrows a single pair of hands, I don’t pretend otherwise. For larger
+        software projects I collaborate with a Polish/Ukrainian software partner — a trusted
+        partnership of almost ten years.
+      </p>
+      <p>
+        Highly skilled engineers with great collaboration and communication skills, and me as your
+        single point of contact who speaks both tech and business.
+      </p>
+    </div>
+  </Section>
+
+  {
+    engineeringQuote && (
+      <Section eyebrow="05 / references" title="What others say">
+        <div class="max-w-2xl">
+          <Quote quote={engineeringQuote} />
+        </div>
+      </Section>
+    )
+  }
+
+  <CtaBand
+    title="Got something to build?"
+    text="Tell me what you’re working on and I’ll tell you honestly whether I’m the right person for it."
+  />
+</Base>

@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import { site } from '../data/site';
+---
+
+<Base title="Privacy" description="Data privacy statement — no cookies, no trackers, no analytics.">
+  <PageHero
+    eyebrow="~/privacy"
+    title="Privacy / Datenschutz"
+    lede="The short version: this site sets no cookies, uses no trackers and runs no analytics."
+  />
+
+  <Section>
+    <div class="max-w-2xl space-y-6 text-muted">
+      <div>
+        <h2 class="font-display text-lg font-semibold text-ink">Keine Datenerhebung durch diese Website</h2>
+        <p class="mt-2">
+          Diese Website verwendet keine Cookies, keine Tracker, keine Analyse-Dienste und bindet
+          keine Inhalte von Drittanbietern ein. Schriftarten werden lokal ausgeliefert. Es werden
+          keine personenbezogenen Daten durch mich erhoben, gespeichert oder verarbeitet.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-lg font-semibold text-ink">Hosting</h2>
+        <p class="mt-2">
+          Diese Website wird bei Cloudflare Pages gehostet. Beim Aufruf der Seite verarbeitet
+          Cloudflare technisch notwendige Verbindungsdaten (z.&nbsp;B. IP-Adresse) zur Auslieferung
+          der Inhalte und zur Abwehr von Angriffen (Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO).
+          Weitere Informationen finden Sie in der
+          <a href="https://www.cloudflare.com/privacypolicy/" class="text-accent hover:underline">
+            Datenschutzerklärung von Cloudflare</a
+          >.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-lg font-semibold text-ink">Kontaktaufnahme</h2>
+        <p class="mt-2">
+          Wenn Sie mir eine E-Mail an
+          <a href={`mailto:${site.email}`} class="text-accent hover:underline">{site.email}</a>
+          schreiben, verwende ich Ihre Angaben ausschließlich zur Beantwortung Ihrer Anfrage.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-lg font-semibold text-ink">Ihre Rechte</h2>
+        <p class="mt-2">
+          Sie haben nach der DSGVO Rechte auf Auskunft, Berichtigung, Löschung und Einschränkung
+          der Verarbeitung Ihrer personenbezogenen Daten. Wenden Sie sich dazu einfach an die oben
+          genannte E-Mail-Adresse.
+        </p>
+      </div>
+    </div>
+  </Section>
+</Base>

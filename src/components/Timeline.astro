@@ -1,0 +1,31 @@
+---
+import { timeline } from '../data/timeline';
+---
+
+<ol class="relative ml-2 border-l border-line">
+  {
+    timeline.map((entry) => (
+      <li class="relative pb-10 pl-8 last:pb-0" data-reveal>
+        <span
+          class="absolute top-1.5 -left-[5px] size-[9px] rounded-full bg-accent"
+          aria-hidden="true"
+        />
+        <p class="font-mono text-[13px] text-accent">{entry.period}</p>
+        <h3 class="mt-1 font-display text-lg font-semibold tracking-tight">
+          {entry.title}
+          {entry.org && <span class="text-muted"> · {entry.org}</span>}
+        </h3>
+        <ul class="mt-2 space-y-1 text-sm leading-relaxed text-muted">
+          {entry.highlights.map((h) => (
+            <li class="flex gap-2">
+              <span class="text-accent" aria-hidden="true">
+                ▸
+              </span>
+              {h}
+            </li>
+          ))}
+        </ul>
+      </li>
+    ))
+  }
+</ol>

@@ -1,0 +1,16 @@
+---
+import type { Quote } from '../data/quotes';
+
+interface Props {
+  quote: Quote;
+}
+
+const { quote } = Astro.props;
+---
+
+<figure class="rounded-lg border-l-2 border-accent bg-surface/60 p-6" data-reveal>
+  <blockquote class="text-lg leading-relaxed text-balance">“{quote.text}”</blockquote>
+  <figcaption class="mt-4 font-mono text-[13px] text-muted">
+    — {quote.author}{quote.role && `, ${quote.role}`}
+  </figcaption>
+</figure>

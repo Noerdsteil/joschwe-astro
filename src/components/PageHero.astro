@@ -1,0 +1,21 @@
+---
+interface Props {
+  /** Mono-font kicker, e.g. "~/prototyping" */
+  eyebrow: string;
+  title: string;
+  /** One-line promise under the title */
+  lede: string;
+}
+
+const { eyebrow, title, lede } = Astro.props;
+---
+
+<div class="border-b border-line bg-surface/50">
+  <div class="mx-auto max-w-5xl px-6 py-16 sm:py-24">
+    <p class="mb-3 font-mono text-sm text-accent">{eyebrow}</p>
+    <h1 class="font-display text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
+      {title}
+    </h1>
+    <p class="mt-4 max-w-2xl text-lg text-muted">{lede}</p>
+  </div>
+</div>

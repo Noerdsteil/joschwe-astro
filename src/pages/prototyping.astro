@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const steps = [
+  {
+    title: 'Day 0 — Sharpen the idea',
+    text: 'A focused call to cut your idea down to the one thing worth validating. We define what “working” means before anything is built.',
+  },
+  {
+    title: 'Day 1–2 — Build',
+    text: 'AI-first development with a senior engineer’s judgment: a fully working prototype, not a clickable mockup.',
+  },
+  {
+    title: 'Day 3 — Validate',
+    text: 'You put it in front of real users or stakeholders. We iterate on what the feedback actually says — or you walk away having spent days, not months.',
+  },
+];
+---
+
+<Base
+  title="Prototyping"
+  description="Fully working prototypes within 2–3 days. Validate your idea and your business model before committing a budget."
+>
+  <PageHero
+    eyebrow="~/prototyping"
+    title="Fully working prototypes within 2–3 days"
+    lede="Validate your idea and your business model before you commit a budget to it. Real software, real feedback, real fast."
+  />
+
+  <Section eyebrow="01 / how it works" title="From idea to evidence in three days">
+    <div class="grid gap-5 lg:grid-cols-3">
+      {
+        steps.map((s) => (
+          <div class="rounded-lg border border-line bg-surface/60 p-6" data-reveal>
+            <h3 class="font-display text-lg font-semibold">{s.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{s.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section eyebrow="02 / why it works" title="Prototypes beat pitch decks">
+    <div class="max-w-2xl space-y-4 text-muted" data-reveal>
+      <p>
+        A prototype answers the questions a slide deck can only speculate about: will users get it,
+        will they use it, will anyone pay for it. An AI-first approach makes this affordable —
+        twenty years of engineering experience make it reliable.
+      </p>
+      <p>
+        And because it’s real software, a successful prototype is a head start, not a throwaway:
+        the learnings (and often the code) carry directly into the actual product.
+      </p>
+    </div>
+  </Section>
+
+  <Section eyebrow="03 / proof" title="A recent example">
+    <a
+      href="https://highfive-habits.lovable.app"
+      class="group block max-w-2xl rounded-lg border border-line bg-surface/60 p-6 transition-all hover:-translate-y-0.5 hover:border-accent"
+      data-reveal
+    >
+      <h3 class="font-mono text-lg font-medium group-hover:text-accent">highfive-habits ↗</h3>
+      <p class="mt-2 text-sm leading-relaxed text-muted">
+        A habit-building app prototype — from idea to a fully working product in days.
+      </p>
+    </a>
+  </Section>
+
+  <CtaBand
+    title="Have an idea worth testing?"
+    text="Tell me about it. If it can be validated in three days, we’ll do exactly that."
+  />
+</Base>

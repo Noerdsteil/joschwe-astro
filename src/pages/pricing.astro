@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const tiers = [
+  {
+    name: 'Mentoring',
+    price: 'Free',
+    unit: '',
+    note: 'No strings attached — see the mentoring page.',
+    highlight: false,
+  },
+  {
+    name: 'Pre-seed startups',
+    price: 'Lunch',
+    unit: '',
+    note: 'Invite me to lunch and let’s talk. I know how hard the beginning is.',
+    highlight: false,
+  },
+  {
+    name: 'Startups & grown-ups',
+    price: '75 €',
+    unit: '/ hour',
+    note: 'Reduced rate for funded startups and grown-ups still finding their footing.',
+    highlight: true,
+  },
+  {
+    name: 'Regular',
+    price: '150 €',
+    unit: '/ hour',
+    note: 'The standard rate for established companies.',
+    highlight: false,
+  },
+];
+---
+
+<Base
+  title="Pricing"
+  description="Transparent pricing: free mentoring, lunch for pre-seed founders, reduced rates for startups, regular rates for established companies."
+>
+  <PageHero
+    eyebrow="~/pricing"
+    title="Transparent, stage-based pricing"
+    lede="I know how hard it is in the beginning — so what you pay depends on where you are, not on how much I can charge."
+  />
+
+  <Section eyebrow="01 / rates" title="Four tiers, no surprises">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        tiers.map((tier) => (
+          <div
+            class:list={[
+              'flex flex-col rounded-lg border p-6',
+              tier.highlight ? 'border-accent bg-accent-soft' : 'border-line bg-surface/60',
+            ]}
+            data-reveal
+          >
+            <p class="font-mono text-[13px] text-accent">{tier.name}</p>
+            <p class="mt-3 font-display text-3xl font-semibold tracking-tight">
+              {tier.price}
+              {tier.unit && <span class="text-base font-normal text-muted"> {tier.unit}</span>}
+            </p>
+            <p class="mt-3 text-sm leading-relaxed text-muted">{tier.note}</p>
+          </div>
+        ))
+      }
+    </div>
+    <p class="mt-8 max-w-2xl text-sm text-muted" data-reveal>
+      All rates plus VAT where applicable. For prototyping sprints and larger projects we agree on
+      a fixed scope and price upfront — no surprises there either.
+    </p>
+  </Section>
+
+  <CtaBand
+    title="Not sure which tier you are?"
+    text="Ask. The honest answer might be the cheaper one."
+  />
+</Base>

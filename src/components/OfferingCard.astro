@@ -1,0 +1,28 @@
+---
+import type { Offering } from '../data/offerings';
+
+interface Props {
+  offering: Offering;
+  index: number;
+}
+
+const { offering, index } = Astro.props;
+const number = String(index + 1).padStart(2, '0');
+---
+
+<a
+  href={offering.href}
+  class="group flex flex-col gap-3 rounded-lg border border-line bg-surface/60 p-6 transition-all hover:-translate-y-0.5 hover:border-accent"
+  data-reveal
+>
+  <p class="font-mono text-[13px] text-muted">
+    <span class="text-accent">{number}</span> / {offering.slug}
+  </p>
+  <h3 class="font-display text-xl font-semibold tracking-tight group-hover:text-accent">
+    {offering.title}
+  </h3>
+  <p class="text-sm leading-relaxed text-muted">{offering.teaser}</p>
+  <p class="mt-auto pt-2 font-mono text-[13px] text-accent">
+    read more <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+  </p>
+</a>

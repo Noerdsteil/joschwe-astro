@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import { site } from '../data/site';
+---
+
+<Base title="Imprint" description="Imprint / Impressum">
+  <PageHero eyebrow="~/imprint" title="Imprint / Impressum" lede="Angaben gemäß § 5 DDG" />
+
+  <Section>
+    <div class="max-w-2xl space-y-6 text-muted">
+      <div>
+        <h2 class="font-display text-lg font-semibold text-ink">Verantwortlich für den Inhalt</h2>
+        <!-- TODO(content): replace with full legal address -->
+        <p class="mt-2">
+          Jonas Schweizer<br />
+          Straße Hausnummer<br />
+          PLZ Ort<br />
+          Deutschland
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-lg font-semibold text-ink">Kontakt</h2>
+        <p class="mt-2">
+          E-Mail: <a href={`mailto:${site.email}`} class="text-accent hover:underline">{site.email}</a>
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-lg font-semibold text-ink">Haftung für Links</h2>
+        <p class="mt-2">
+          Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen
+          Einfluss habe. Für diese fremden Inhalte übernehme ich keine Gewähr; verantwortlich ist
+          stets der jeweilige Anbieter oder Betreiber der Seiten.
+        </p>
+      </div>
+    </div>
+  </Section>
+</Base>

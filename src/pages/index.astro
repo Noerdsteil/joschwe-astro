@@ -1,0 +1,119 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import OfferingCard from '../components/OfferingCard.astro';
+import Timeline from '../components/Timeline.astro';
+import Quote from '../components/Quote.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { offerings } from '../data/offerings';
+import { quotes } from '../data/quotes';
+import { site } from '../data/site';
+
+const homeQuote = quotes.find((q) => q.context === 'home');
+---
+
+<Base>
+  <!-- Hero -->
+  <div class="relative overflow-hidden border-b border-line">
+    <div
+      class="pointer-events-none absolute -top-40 left-1/2 size-[36rem] -translate-x-1/2 rounded-full bg-accent opacity-10 blur-3xl"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="relative mx-auto max-w-5xl px-6 py-24 sm:py-32">
+      <p class="mb-4 font-mono text-sm text-accent">
+        ~/jonas-schweizer $ whoami<span class="cursor">▊</span>
+      </p>
+      <h1 class="font-display text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
+        Software engineer, ex-CTO &amp; co-founder — with a pure startup mindset.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
+        If tech English and business English were languages, I’d speak both fluently. I build web
+        apps and prototypes, spar with founders and executives, and help startups get compliance
+        right without losing speed.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a
+          href="#what-i-do"
+          class="rounded-md bg-accent px-5 py-2.5 font-mono text-sm font-medium text-bg transition-opacity hover:opacity-85"
+        >
+          What I do
+        </a>
+        <a
+          href={`mailto:${site.email}`}
+          class="rounded-md border border-line px-5 py-2.5 font-mono text-sm text-muted transition-colors hover:border-accent hover:text-accent"
+        >
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <Section id="what-i-do" eyebrow="01 / what i do" title="Five ways I can help">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {offerings.map((offering, i) => <OfferingCard offering={offering} index={i} />)}
+    </div>
+  </Section>
+
+  <Section eyebrow="02 / career" title="Twenty years from code to C-level and back">
+    <div class="grid gap-12 lg:grid-cols-[2fr_1fr]">
+      <Timeline />
+      <aside class="space-y-4" data-reveal>
+        <div class="rounded-lg border border-line bg-surface/60 p-6">
+          <h3 class="font-display text-lg font-semibold">The short version</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">
+            Engineer by training, founder by experience. I co-founded Laserhub and grew it from 3
+            to 50 people as CTO, raised three VC rounds along the way, and today I’m back where I’m
+            happiest: building software, now at rhome.
+          </p>
+          <a
+            href={site.cvUrl}
+            class="mt-4 inline-block font-mono text-[13px] text-accent hover:underline"
+          >
+            download CV →
+          </a>
+        </div>
+        <div class="rounded-lg border border-line bg-surface/60 p-6">
+          <h3 class="font-display text-lg font-semibold">Off the clock</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">
+            Proud father of two, hip-hop head, watersports enthusiast and a hopeless tooling nerd —
+            I love exploring new tools for any type of professional or private matter.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </Section>
+
+  {
+    homeQuote && (
+      <Section eyebrow="03 / references" title="What others say">
+        <div class="max-w-2xl">
+          <Quote quote={homeQuote} />
+        </div>
+      </Section>
+    )
+  }
+
+  <CtaBand
+    title="Let’s talk"
+    text="Whether you want to build something, need a sparring partner or just want to compare notes on tooling — I’m easy to reach."
+  />
+</Base>
+
+<style>
+  .cursor {
+    animation: blink 1.1s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor {
+      animation: none;
+    }
+  }
+</style>

@@ -1,0 +1,157 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Quote from '../components/Quote.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { quotes } from '../data/quotes';
+
+const cxoQuote = quotes.find((q) => q.context === 'cxo');
+
+const formats = [
+  {
+    title: 'CEO Sparring',
+    items: [
+      'Do we have the right team setup in tech?',
+      'Do we have the right tech stack and processes?',
+      'Are we leveraging AI enough?',
+    ],
+  },
+  {
+    title: 'CTO Sparring',
+    items: [
+      'Review of processes',
+      'Review of IT landscape and tech debt',
+      'Review of team setup and leadership',
+    ],
+  },
+  {
+    title: 'COO Sparring',
+    items: [
+      'Where do tech and operations rub against each other?',
+      'Which processes deserve automation — and which don’t?',
+    ],
+  },
+  {
+    title: 'Interim CTO',
+    items: [
+      'Bridging the gap while you hire',
+      'Hands-on leadership, not just advice',
+    ],
+  },
+];
+
+const articles = [
+  {
+    title: 'Being a startup CTO in Stuttgart — shaping the monolith',
+    href: 'https://medium.com/@Joschwe/being-a-startup-cto-in-stuttgart-shaping-the-monolith-dade51648158',
+    source: 'Medium',
+  },
+  {
+    title: 'A startup-like way of integrating serverless framework, API gateway and message queues',
+    href: 'https://apiconference.net/api-development/a-start-up-like-way-of-integrating-serverless-framework-api-gateway-and-message-queue-to-handle-webhooks-for-3rd-party-services/',
+    source: 'API Conference',
+  },
+  {
+    title: 'Speaker profile',
+    href: 'https://entwickler.de/experten/jonas-schweizer',
+    source: 'entwickler.de',
+  },
+  {
+    title: 'Boost for Europe’s Industry 4.0 — Acton Capital leads Series A for Laserhub',
+    href: 'https://www.actoncapital.com/news/boost-for-europes-industry-4-0---acton-capital-leads-series-a-for-laserhub',
+    source: 'Acton Capital',
+  },
+  {
+    title: 'Wir sind gekommen, um zu bleiben',
+    href: 'https://startup-stuttgart.de/wir-sind-gekommen-um-zu-bleiben/',
+    source: 'Startup Stuttgart',
+  },
+  {
+    title: 'Talk: Laserhub engineering',
+    href: 'https://www.youtube.com/watch?v=LnlJpAWZEwE',
+    source: 'YouTube',
+  },
+];
+---
+
+<Base
+  title="CxO Sparring"
+  description="Sparring for CEOs, COOs and CTOs from a former co-founder and CTO: team setup, tech stack, processes, AI leverage and interim CTO work."
+>
+  <PageHero
+    eyebrow="~/cxo-sparring"
+    title="Sparring from someone who has sat in your chair"
+    lede="I co-founded a company, grew it from 3 to 50 people as CTO and raised three VC rounds. I know what these decisions feel like from the inside — and I’ll tell you what I actually think."
+  />
+
+  <Section eyebrow="01 / formats" title="Who I spar with">
+    <div class="grid gap-5 sm:grid-cols-2">
+      {
+        formats.map((f) => (
+          <div class="rounded-lg border border-line bg-surface/60 p-6" data-reveal>
+            <h3 class="font-display text-lg font-semibold">{f.title}</h3>
+            <ul class="mt-3 space-y-2 text-sm leading-relaxed text-muted">
+              {f.items.map((item) => (
+                <li class="flex gap-2">
+                  <span class="text-accent" aria-hidden="true">
+                    ▸
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section eyebrow="02 / why me" title="What makes this different">
+    <div class="max-w-2xl space-y-4 text-muted" data-reveal>
+      <p>
+        I’m not a career consultant. I’ve built the team, carried the pager, pitched the investors
+        and cleaned up the tech debt — often in the same week. That’s the perspective you get:
+        operator first, advisor second.
+      </p>
+      <p>
+        When talking to business founders, that dual fluency matters most — I translate between
+        what the business needs and what the tech can deliver, in both directions, without losing
+        anything in between.
+      </p>
+    </div>
+  </Section>
+
+  {
+    cxoQuote && (
+      <Section eyebrow="03 / references" title="What others say">
+        <div class="max-w-2xl">
+          <Quote quote={cxoQuote} />
+        </div>
+      </Section>
+    )
+  }
+
+  <Section eyebrow="04 / reading" title="Articles, talks & press">
+    <ul class="grid gap-3 sm:grid-cols-2">
+      {
+        articles.map((a) => (
+          <li data-reveal>
+            <a
+              href={a.href}
+              class="group flex h-full flex-col rounded-lg border border-line bg-surface/60 p-5 transition-all hover:-translate-y-0.5 hover:border-accent"
+            >
+              <p class="font-mono text-[13px] text-accent">{a.source}</p>
+              <p class="mt-1 text-sm leading-relaxed group-hover:text-accent">{a.title} ↗</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
+
+  <CtaBand
+    title="Need a sparring partner?"
+    text="First session is on me — we’ll both know afterwards whether this is useful."
+  />
+</Base>
