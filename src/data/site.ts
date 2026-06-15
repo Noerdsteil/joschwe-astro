@@ -9,9 +9,9 @@ export const site = {
     'Senior software engineer with a pure startup mindset. Web apps, rapid prototyping, CxO sparring, compliance for startups and free mentoring.',
   url: 'https://www.schweizer-jonas.de',
   // TODO(content): confirm final contact email and social URLs
-  email: 'hello@schweizer-jonas.de',
-  linkedin: 'https://www.linkedin.com/in/jonas-schweizer',
-  github: 'https://github.com/joschwe',
+  email: 'webmaster@schweizer-jonas.de',
+  linkedin: 'https://www.linkedin.com/in/jonasschweizer/',
+  github: 'https://github.com/Noerdsteil',
   cvUrl: '/cv-jonas-schweizer.pdf',
 } as const;
 

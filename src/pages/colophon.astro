@@ -45,6 +45,131 @@ const inspirations = [
   { name: 'devonstank.com', href: 'https://devonstank.com' },
   { name: 'Stellar by Cruip', href: 'https://cruip.com/demos/stellar/' },
 ];
+
+// The verbatim kickoff prompt handed to Claude Code, typos and all.
+// Only the private CV vault link was redacted for publication.
+const kickoffPrompt = `## Content Structure
+### about me
+> If tech English and business English would be languages, I speak both fluent
+- High Level Career Timeline
+    - Bachelor Computer Science 2006 - 2009
+        - Worked as software engineer in various university departments from day 1
+    - Software Engineer at Bigpoint (Gaming Scaleup) 2010 - 2011
+    - Master in Information Engineering? 2011 - 2014
+        - Freelance software engineer and consultant for agencies and gruenspar (ecommerce startup)
+    - Business and IT Consultant for diconium strategy 2014 - 2017
+        - Leveled up my conceptual and strategic thinking
+        - learned how to structure any problem
+        - started to grow a team-first leadership mindest
+    - Co-founder and CTO at Laserhub (start to scaleup) 2017 - 2021
+        - from 3 to 50 employees
+        - contributed to 3 VC financing rounds
+        - build and grew a tech team from zero
+        - from bare metal to cloud-native software stack
+    - Co-founder at Laserhub (2021 - 2025) Stepped back as MD, transitioned to other roles
+    - Currently: 2025 until now
+        - Senior Software Engineer at rhome GmbH (grown up startup, 10 employees)
+        - My goals at rhome: Sustainably grow tec, team and processes while scaling rhome's business
+        - Taking rhome to next level when it comes to processes, compliance & security, culture
+- Tooling Nerd
+    - Love exploring new tools for any type of professional, Tech or private matters
+    - Maybe I will feature a list of tools I love and why at a later point in time also allowing me to create some more trust by linking great websites
+- Proud Father with 2 kids, hip hop and watersports enthusiast
+
+> [! Hint] I kept my CV updated here for more references. Let's also link the CV somewhere on the page
+[[ link to my private CV — redacted for publication ]]
+### software engineering
+> Senior software engineer with a pure startup mindset
+- Tech Stack
+    - Node.js, Python, Vue.js, Tailwind
+    - MySqL, Postgres
+    - From Bare Metal to Cloud Native Infrastructure
+- What I can build
+    - Focus Web Apps
+    - pragmatic Automations beyond n8n
+    - Prototyping, see Prototyping
+- AI First Approach to Software Engineering
+- Product oriented mindset
+- Mindeset of continuous improvements:
+    - improve legacy code while coding new features
+    - aka the right question upfront
+- What others say about Jonas as software engineer
+- Examples
+    - laserhub.com
+    - ambrosius.ai
+### prototyping
+> Fully working prototypes within 2-3 days
+- fully working prototypes
+- AI first approach
+- Validate your idea
+- Validate your business model
+- Examples
+    - highfive-habits.lovable.com
+
+### Larger Software Project
+- For larger software project, I collaborate with a Polish/Ukrainian software partner
+- Trusted partnership for almost 10 years
+- Highly skilled engineers with great collaboration and communication skills
+
+### CxO Sparring
+- CEO Sparring
+    - Do we have the right team setup in tec
+    - Do we have the right tech stack and processes
+    - Are we leveraging AI enough
+- COO Sparring
+- CTO Sparring
+    - Review of processes
+    - Review of IT landscape and tech debt
+    - Review of team setup and leardship
+- Interims CTO
+- what other say about me as CTO
+    - what's my leadership style
+    - what makes me different from others
+    - why people loved to work with me
+    - What differentiates me when talking to business founders
+- Some reference articles
+### compliance for startups
+- review of your organization and IT landscape from a compliance perspective
+- decision making for data privacy
+- Strategy and concept for ISO 27001
+- Strategy and concept for TISAX
+- More than just analysis, I will help interpreting the result and derive the right actions to take
+- I also assist in implementing, so my work does not end with the evaluation
+### Mentoring
+### Pricing
+- Mentoring is free
+- Pre-Seed startups: invite me to lunch
+- Startups and Grownups: I know how hard it is in the beginning
+- regular pricing
+## Contact
+## Footer
+- Imprint
+- Basic Data privacy: we will not use any trackers, cookies, etc. so very simple German law privacy statement
+- How I built this site, with an explanational blog content, how I approached it, the exact tech stack with backlinks to the resources as well as a backlink to all those website I mentioned below
+# Header: LinkedIn, Github
+
+# Example Pages for Reference
+A handful of personal sites I admired — analysed for what made each one work,
+then distilled into one design direction.
+
+# Constraints
+- Preferred tech stack: Vue with Tailwind as I am skilled with these
+- A static site generator framework like Astro or Hugo if it brings value
+- I do not want to use any component libraries, as I would like to keep things easy to main
+- I will probably only add some pages over time, it will mainly be a one-time shot and then bugfix
+- While the page is mostly about the final website, I love great code. Please follow all best practices of the frameworks and libraries we choose. For this project, I would love a simple and minimal codebase with some smart usage of Frontend components, etc.
+
+### Your Task:
+- Research the all given links, understand the similiarties and differences
+- Ask back questions if you are in doubt or need more clarification
+- We will most probably not meet my design in the first place. The design system should be flexible to update, be based on real standards
+- Tell me upfront, what type of contents (like images, etc.) you need
+- Implement the website as Senior Frontend Architect
+- Build it the way it's easy deployable with Github and cloudflare static pages
+- Run it locally, see it in action and fix bugs that occur
+- Then switch the role you have:
+    - You act as a Tech recruiter or Team lead and you are interested in the candidate
+    - Think about the content of the page from this angle and suggest some updates`;
 ---
 
 <Base
@@ -79,12 +204,44 @@ const inspirations = [
     </div>
   </Section>
 
-  <Section eyebrow="02 / stack" title="The stack">
+  <Section eyebrow="02 / the brief" title="The prompt that started it">
+    <div class="max-w-2xl space-y-4 text-muted" data-reveal>
+      <p>
+        AI-first doesn’t mean typing “make me a website”. It means doing the thinking up front and
+        handing over a brief precise enough to build from. This is the actual kickoff prompt I gave
+        Claude Code — content structure, reference sites, constraints and the task itself, typos and
+        all.
+      </p>
+      <p>
+        After the first build I spent another two to three hours fine-tuning the content — the
+        words, the examples, the order of things — but never touched the design, the structure or
+        the components again. That’s the real test of a foundation: it held.
+      </p>
+    </div>
+    <details
+      class="group mt-8 max-w-3xl overflow-hidden rounded-lg border border-line bg-surface/60"
+      data-reveal
+    >
+      <summary
+        class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-4 font-mono text-[13px] text-accent transition-colors hover:bg-surface [&::-webkit-details-marker]:hidden"
+      >
+        <span>Read the full kickoff prompt</span>
+        <span class="transition-transform group-open:rotate-180" aria-hidden="true">↓</span>
+      </summary>
+      <pre
+        class="overflow-x-auto whitespace-pre-wrap border-t border-line px-6 py-5 font-mono text-[12px] leading-relaxed text-muted"
+      >{kickoffPrompt}</pre>
+    </details>
+  </Section>
+
+  <Section eyebrow="03 / stack" title="The stack">
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {
         stack.map((item) => (
           <a
             href={item.href}
+            target="_blank"
+            rel="noopener"
             class="group rounded-lg border border-line bg-surface/60 p-6 transition-all hover:-translate-y-0.5 hover:border-accent"
             data-reveal
           >
@@ -96,13 +253,15 @@ const inspirations = [
     </div>
   </Section>
 
-  <Section eyebrow="03 / credit" title="Sites that inspired this one">
+  <Section eyebrow="04 / credit" title="Sites that inspired this one">
     <ul class="flex max-w-2xl flex-wrap gap-3" data-reveal>
       {
         inspirations.map((i) => (
           <li>
             <a
               href={i.href}
+              target="_blank"
+              rel="noopener"
               class="inline-block rounded-md border border-line px-4 py-2 font-mono text-[13px] text-muted transition-colors hover:border-accent hover:text-accent"
             >
               {i.name} ↗

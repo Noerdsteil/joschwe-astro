@@ -39,7 +39,17 @@ const examples = [
   {
     name: 'ambrosius.ai',
     href: 'https://ambrosius.ai',
-    text: 'An AI-driven product I contributed to as a software engineer.',
+    text: 'An AI-driven product I build and run myself as a side hustle.',
+  },
+  {
+    name: 'rhome.world',
+    href: 'https://www.rhome.world',
+    text: 'The global mobility platform for workations, business travel and assignments — compliant & simple. I work on it as a Senior Full Stack Engineer.',
+  },
+  {
+    name: 'tally-js',
+    href: 'https://www.npmjs.com/package/tally-js',
+    text: 'A type-safe, developer-friendly TypeScript wrapper for the Tally.so API, published as an open-source npm package.',
   },
 ];
 ---
@@ -90,6 +100,8 @@ const examples = [
         examples.map((e) => (
           <a
             href={e.href}
+            target="_blank"
+            rel="noopener"
             class="group rounded-lg border border-line bg-surface/60 p-6 transition-all hover:-translate-y-0.5 hover:border-accent"
             data-reveal
           >

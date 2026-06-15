@@ -6,7 +6,7 @@ import Quote from '../components/Quote.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { quotes } from '../data/quotes';
 
-const cxoQuote = quotes.find((q) => q.context === 'cxo');
+const cxoQuotes = quotes.filter((q) => q.context === 'cxo');
 
 const formats = [
   {
@@ -115,6 +115,13 @@ const articles = [
         operator first, advisor second.
       </p>
       <p>
+        Startups have shaped my whole career: it started back in 2011 when I co-founded
+        blogfieber.com as a student — it didn’t take off because the team didn’t match, the
+        earliest and most valuable lesson of all: team wins. A year later I joined Grünspar, a
+        Münster-based e-commerce startup, as a working student in product management — it later
+        exited successfully to energy company EWE.
+      </p>
+      <p>
         When talking to business founders, that dual fluency matters most — I translate between
         what the business needs and what the tech can deliver, in both directions, without losing
         anything in between.
@@ -123,10 +130,12 @@ const articles = [
   </Section>
 
   {
-    cxoQuote && (
+    cxoQuotes.length > 0 && (
       <Section eyebrow="03 / references" title="What others say">
-        <div class="max-w-2xl">
-          <Quote quote={cxoQuote} />
+        <div class="max-w-2xl space-y-5">
+          {cxoQuotes.map((q) => (
+            <Quote quote={q} />
+          ))}
         </div>
       </Section>
     )
@@ -139,6 +148,8 @@ const articles = [
           <li data-reveal>
             <a
               href={a.href}
+              target="_blank"
+              rel="noopener"
               class="group flex h-full flex-col rounded-lg border border-line bg-surface/60 p-5 transition-all hover:-translate-y-0.5 hover:border-accent"
             >
               <p class="font-mono text-[13px] text-accent">{a.source}</p>

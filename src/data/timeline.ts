@@ -45,10 +45,28 @@ export const timeline: TimelineEntry[] = [
     ],
   },
   {
+    period: '2012',
+    title: 'Working Student, Product Management',
+    org: 'Grünspar',
+    highlights: [
+      'First startup experience at the Münster-based e-commerce startup for energy-saving products',
+      'Grünspar later exited successfully to energy company EWE',
+    ],
+  },
+  {
     period: '2011 — 2014',
     title: 'M.Sc. Information Engineering & Freelancing',
     highlights: [
       'Freelance software engineer and consultant for agencies and gruenspar (e-commerce startup)',
+    ],
+  },
+  {
+    period: '2011',
+    title: 'Co-Founder',
+    org: 'blogfieber.com',
+    highlights: [
+      'Co-founded a student startup — it didn’t take off, but taught me the most important lesson early: team wins',
+      'The team didn’t match, and no idea survives that',
     ],
   },
   {
