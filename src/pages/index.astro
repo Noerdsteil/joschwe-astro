@@ -28,9 +28,9 @@ const homeQuote = quotes.find((q) => q.context === 'home');
         Software engineer, ex-CTO &amp; co-founder — with a pure startup mindset.
       </h1>
       <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-        If tech English and business English were languages, I’d speak both fluently. I build web
-        apps and prototypes, spar with founders and executives, and help startups get compliance
-        right without losing speed.
+        If tech English and business English were languages, I’d speak both fluently — and people
+        English is my dialect. Twenty years in, I’m happiest writing code that ships, and just as
+        comfortable in the room where the strategy gets decided.
       </p>
       <div class="mt-10 flex flex-wrap gap-3">
         <a
@@ -49,8 +49,8 @@ const homeQuote = quotes.find((q) => q.context === 'home');
     </div>
   </div>
 
-  <Section id="what-i-do" eyebrow="01 / what i do" title="Five ways I can help">
-    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+  <Section id="what-i-do" eyebrow="01 / what i do" title="What I do">
+    <div class="grid gap-5 sm:grid-cols-2">
       {offerings.map((offering, i) => <OfferingCard offering={offering} index={i} />)}
     </div>
   </Section>
@@ -59,6 +59,14 @@ const homeQuote = quotes.find((q) => q.context === 'home');
     <div class="grid gap-12 lg:grid-cols-[2fr_1fr]">
       <Timeline />
       <aside class="space-y-4" data-reveal>
+        <img
+          src="/jonas-schweizer-portrait-squared.jpeg"
+          alt="Jonas Schweizer"
+          width="600"
+          height="600"
+          loading="lazy"
+          class="aspect-square w-full rounded-lg border border-line object-cover"
+        />
         <div class="rounded-lg border border-line bg-surface/60 p-6">
           <h3 class="font-display text-lg font-semibold">The short version</h3>
           <p class="mt-2 text-sm leading-relaxed text-muted">

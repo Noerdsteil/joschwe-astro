@@ -6,7 +6,7 @@ export const site = {
   name: 'Jonas Schweizer',
   title: 'Jonas Schweizer — Software Engineer, Ex-CTO & Co-Founder',
   description:
-    'Senior software engineer with a pure startup mindset. Web apps, rapid prototyping, CxO sparring, compliance for startups and free mentoring.',
+    'Jonas Schweizer — senior software engineer, ex-CTO and co-founder. Twenty years from code to C-level and back. Web apps, prototyping, CxO sparring and mentoring.',
   url: 'https://www.schweizer-jonas.de',
   // TODO(content): confirm final contact email and social URLs
   email: 'webmaster@schweizer-jonas.de',
@@ -24,9 +24,7 @@ export const nav: NavItem[] = [
   { label: 'Engineering', href: '/engineering/' },
   { label: 'Prototyping', href: '/prototyping/' },
   { label: 'CxO Sparring', href: '/cxo-sparring/' },
-  { label: 'Compliance', href: '/compliance/' },
   { label: 'Mentoring', href: '/mentoring/' },
-  { label: 'Pricing', href: '/pricing/' },
 ];
 
 export const footerNav: NavItem[] = [

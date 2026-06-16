@@ -19,21 +19,14 @@ export const offerings: Offering[] = [
     href: '/prototyping/',
     slug: 'prototyping',
     teaser:
-      'Fully working prototypes within 2–3 days. Validate your idea and your business model before you commit a budget to it.',
+      'Fully working prototypes in days, not months. Real software that turns an idea into something you can actually test.',
   },
   {
     title: 'CxO Sparring',
     href: '/cxo-sparring/',
     slug: 'cxo-sparring',
     teaser:
-      'Sparring for CEOs, COOs and CTOs from someone who has been on both sides: team setup, tech stack, processes, AI leverage — and interim CTO work.',
-  },
-  {
-    title: 'Compliance for Startups',
-    href: '/compliance/',
-    slug: 'compliance',
-    teaser:
-      'ISO 27001, TISAX and data privacy without the enterprise overhead. From review to strategy to hands-on implementation.',
+      'I’ve sat in the CTO chair: team setup, tech stack, processes, AI leverage — and the hard calls in between. Sometimes that’s worth a conversation.',
   },
   {
     title: 'Mentoring',

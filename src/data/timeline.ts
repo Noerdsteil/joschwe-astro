@@ -54,13 +54,6 @@ export const timeline: TimelineEntry[] = [
     ],
   },
   {
-    period: '2011 — 2014',
-    title: 'M.Sc. Information Engineering & Freelancing',
-    highlights: [
-      'Freelance software engineer and consultant for agencies and gruenspar (e-commerce startup)',
-    ],
-  },
-  {
     period: '2011',
     title: 'Co-Founder',
     org: 'blogfieber.com',
@@ -70,15 +63,31 @@ export const timeline: TimelineEntry[] = [
     ],
   },
   {
+    period: '2011 — 2014',
+    title: 'Freelance Software Engineer',
+    highlights: [
+      'Worked for multiple clients across varying tech stacks',
+    ],
+  },
+  {
+    period: '2011 — 2014',
+    title: 'M.Sc. Information Engineering',
+    highlights: [
+      'Learned the strategic foundations and a lot about process modeling',
+      'Sharpened my analytical thinking',
+    ],
+  },
+  {
     period: '2010 — 2011',
-    title: 'Software Engineer',
-    org: 'Bigpoint',
+    title: 'Junior Engineer',
+    org: 'Bigpoint, a gaming scale-up',
     highlights: ['Engineering at gaming scale-up speed'],
   },
   {
     period: '2006 — 2009',
     title: 'B.Sc. Computer Science',
     highlights: [
+      'Majored in Human-Computer Interaction',
       'Worked as a software engineer in various university departments from day one',
     ],
   },
