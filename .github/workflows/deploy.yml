@@ -21,6 +21,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: withastro/action@v3 # auto-detects npm + builds dist/
+        with:
+          node-version: 22
 
   deploy:
     needs: build
