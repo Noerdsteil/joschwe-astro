@@ -27,22 +27,3 @@ npm run shots      # Playwright screenshots of key pages into /tmp/joschwe-shots
   (light/dark via a `.dark` class on `<html>`), font stacks, reveal animation. Changing the
   look of the site means changing tokens here.
 - `src/pages/` — one `.astro` file per route.
-
-## Deployment (Cloudflare Pages)
-
-1. Push this repository to GitHub.
-2. In the Cloudflare dashboard: **Workers & Pages → Create → Pages → Connect to Git** and
-   select the repository.
-3. Build settings: framework preset **Astro**, build command `npm run build`, output
-   directory `dist`.
-
-Every push to the default branch deploys automatically; other branches get preview URLs.
-
-## Content TODOs
-
-Search the codebase for `TODO(content)`:
-
-- Final domain (`astro.config.mjs`, `src/data/site.ts`), contact email and social URLs
-- Real reference quotes (`src/data/quotes.ts`)
-- CV PDF at `public/cv-jonas-schweizer.pdf`
-- Full legal address in `src/pages/imprint.astro`
