@@ -43,6 +43,7 @@ export const quotes: Quote[] = [
   {
     text: 'Jonas isn’t just someone who has the ability to understand problems in depth and develop solutions, but also to strategically bring issues back to the forefront. On a personal level, too, working with Jonas has always been a lot of fun.',
     author: 'Sarah G.',
+    role: 'Former colleague at diconium strategy',
     context: ['home', 'leadership'],
   },
 ];
