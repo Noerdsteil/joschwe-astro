@@ -1,0 +1,86 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Quote from '../components/Quote.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { quotes } from '../data/quotes';
+
+const leadershipQuotes = quotes.filter((q) => q.context.includes('leadership'));
+
+const principles = [
+  {
+    title: 'Teams beat heroes',
+    body: 'The best work I’ve been part of never came from a single star. At Laserhub we built a culture where departments backed each other up over years — and no individual, however brilliant, could have solved the problems we solved together. My job as a leader is to build that team, not to be the smartest person in the room.',
+  },
+  {
+    title: 'Technical depth, people first',
+    body: 'I read code and I read people. I stay close enough to the work to earn engineers’ trust, and I care more about how someone grows than about being right in a review.',
+  },
+  {
+    title: 'Easy to be around, hard to satisfy',
+    body: 'I’ll happily grab a coffee and celebrate wins with colleagues at any level. I also ask sharp questions in workshops — the kind people learn to come prepared for. A high bar and a low ego aren’t in conflict.',
+  },
+  {
+    title: 'Open door, for real',
+    body: 'An open door isn’t a line in an onboarding deck. It means people actually walk through it — with bad news, half-baked ideas and the question they’re afraid is stupid. I optimise for that.',
+  },
+  {
+    title: 'Compounding over moonshots',
+    body: 'I trust steady improvement over big-bang bets. Engineers have told me what they valued most was the freedom — and the encouragement — to improve the codebase a little every week. That compounds further than any heroic rewrite.',
+  },
+  {
+    title: 'I help people think, not just answer',
+    body: 'I’m a process thinker. Where many people read a requirement and start building, I ask the simple question that makes us look at it from a different angle. I’d rather coach someone to take a problem apart than hand them my solution.',
+  },
+  {
+    title: 'Value, effort, risk — out loud',
+    body: 'Most decisions are a trade between business value, effort and risk. I make that trade explicit so the team can argue with it, instead of hiding it behind a roadmap.',
+  },
+  {
+    title: 'No bullshit bingo',
+    body: 'I say what I mean in plain words. If I can’t explain why we’re doing something without buzzwords, that’s usually a sign we shouldn’t be doing it.',
+  },
+];
+---
+
+<Base
+  title="Leadership"
+  description="How Jonas Schweizer leads engineering teams: the principles behind a people-first, technically grounded leadership style — from a former CTO and co-founder."
+>
+  <PageHero
+    eyebrow="~/leadership"
+    title="How I lead"
+    lede="I’ve led engineers as a CTO and a co-founder, and I care more about how a team feels to work in than about any framework. Here’s what I actually believe about leading people — in plain words, no bullshit bingo."
+  />
+
+  <Section eyebrow="01 / principles" title="What I lead by">
+    <div class="grid gap-5 sm:grid-cols-2">
+      {
+        principles.map((p) => (
+          <div class="rounded-lg border border-line bg-surface/60 p-6" data-reveal>
+            <h3 class="font-display text-lg font-semibold">{p.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted">{p.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  {
+    leadershipQuotes.length > 0 && (
+      <Section eyebrow="02 / references" title="What others say">
+        <div class="max-w-2xl space-y-5">
+          {leadershipQuotes.map((q) => (
+            <Quote quote={q} />
+          ))}
+        </div>
+      </Section>
+    )
+  }
+
+  <CtaBand
+    title="Want to know how I’d lead your team?"
+    text="I’m easy to reach — and I’ll tell you honestly whether I’m the right person for the role."
+  />
+</Base>
