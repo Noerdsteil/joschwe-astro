@@ -6,7 +6,7 @@ import Quote from '../components/Quote.astro';
 import CtaBand from '../components/CtaBand.astro';
 import { quotes } from '../data/quotes';
 
-const engineeringQuote = quotes.find((q) => q.context === 'engineering');
+const engineeringQuotes = quotes.filter((q) => q.context === 'engineering');
 
 const stack = [
   { label: 'Backend', items: ['Node.js', 'Python'] },
@@ -128,10 +128,12 @@ const examples = [
   </Section>
 
   {
-    engineeringQuote && (
+    engineeringQuotes.length > 0 && (
       <Section eyebrow="05 / references" title="What others say">
-        <div class="max-w-2xl">
-          <Quote quote={engineeringQuote} />
+        <div class="max-w-2xl space-y-5">
+          {engineeringQuotes.map((q) => (
+            <Quote quote={q} />
+          ))}
         </div>
       </Section>
     )

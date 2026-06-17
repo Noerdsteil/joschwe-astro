@@ -9,7 +9,7 @@ import { offerings } from '../data/offerings';
 import { quotes } from '../data/quotes';
 import { site } from '../data/site';
 
-const homeQuote = quotes.find((q) => q.context === 'home');
+const homeQuotes = quotes.filter((q) => q.context === 'home');
 ---
 
 <Base>
@@ -95,10 +95,12 @@ const homeQuote = quotes.find((q) => q.context === 'home');
   </Section>
 
   {
-    homeQuote && (
+    homeQuotes.length > 0 && (
       <Section eyebrow="03 / references" title="What others say">
-        <div class="max-w-2xl">
-          <Quote quote={homeQuote} />
+        <div class="max-w-2xl space-y-5">
+          {homeQuotes.map((q) => (
+            <Quote quote={q} />
+          ))}
         </div>
       </Section>
     )

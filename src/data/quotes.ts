@@ -23,6 +23,12 @@ export const quotes: Quote[] = [
     context: 'cxo',
   },
   {
+    text: 'Jonas can boil down a complex technical problems into their simplest components while getting the team to pull in the same direction. I’ve met few who can do this.',
+    author: 'Lukas Hermann',
+    role: 'CEO stagetimer.io, former colleague at Laserhub',
+    context: 'home',
+  },
+  {
     text: 'Once a founder, always a legend.',
     author: 'The Laserhub team',
     role: 'Farewell booklet, 2025',
