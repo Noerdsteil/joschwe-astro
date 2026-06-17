@@ -9,7 +9,7 @@ import { offerings } from '../data/offerings';
 import { quotes } from '../data/quotes';
 import { site } from '../data/site';
 
-const homeQuotes = quotes.filter((q) => q.context === 'home');
+const homeQuotes = quotes.filter((q) => q.context.includes('home'));
 ---
 
 <Base>

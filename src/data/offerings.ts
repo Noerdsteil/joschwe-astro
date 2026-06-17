@@ -15,6 +15,13 @@ export const offerings: Offering[] = [
       'Senior full-stack engineering with a pure startup mindset. Web apps, pragmatic automations and an AI-first approach — built to ship and built to last.',
   },
   {
+    title: 'Leadership',
+    href: '/leadership/',
+    slug: 'leadership',
+    teaser:
+      'Building teams that excel individual experts — technical depth, a people-first mindset and plain words instead of bullshit bingo. How I lead, in principles.',
+  },
+  {
     title: 'Prototyping',
     href: '/prototyping/',
     slug: 'prototyping',

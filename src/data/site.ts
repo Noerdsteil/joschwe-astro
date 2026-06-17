@@ -22,6 +22,7 @@ export interface NavItem {
 
 export const nav: NavItem[] = [
   { label: 'Engineering', href: '/engineering/' },
+  { label: 'Leadership', href: '/leadership/' },
   { label: 'Prototyping', href: '/prototyping/' },
   { label: 'CxO Sparring', href: '/cxo-sparring/' },
   { label: 'Mentoring', href: '/mentoring/' },
