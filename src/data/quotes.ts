@@ -46,4 +46,10 @@ export const quotes: Quote[] = [
     role: 'Former colleague at diconium strategy',
     context: ['home', 'leadership'],
   },
+  {
+    text: 'Working with Jonas was always refreshing. His thinking is sharp and out of the box, and he grasps complex matters on both a strategic and technical level. Even when things get complicated, he keeps the overview and never loses focus where it matters. I learned a lot from him, particularly in how to approach complex problems. He brought real value to every project he was part of.',
+    author: 'Janosch K.',
+    role: 'Former colleague at diconium, now Director Marketing and Product',
+    context: ['home', 'cxo'],
+  },
 ];
